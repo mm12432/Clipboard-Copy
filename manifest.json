@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Clipboard copy",
+  "version": "1.0.0",
+  "description": "用于系统剪切板clipboard内容复制",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["tabs", "background", "clipboardRead"],
+  "web_accessible_resources": ["js/background.js"]
+}
